@@ -1,0 +1,30 @@
+{
+  "name": "@vandeurenglenn/typed-array-smart-concat",
+  "version": "1.0.0",
+  "description": "TypedArray.set() the smartConcat() way",
+  "type": "module",
+  "exports": {
+    ".": "./smart-concat.js"
+  },
+  "types": "./smart-concat.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VandeurenGlenn/typed-array-smart-concat.git"
+  },
+  "bugs": {
+    "url": "https://github.com/VandeurenGlenn/typed-array-smart-concat/issues"
+  },
+  "homepage": "https://github.com/VandeurenGlenn/typed-array-smart-concat#readme",
+  "dependencies": {
+    "varint": "github:vandeurenglenn/varint"
+  },
+  "devDependencies": {
+    "@types/varint": "^6.0.1"
+  }
+}
