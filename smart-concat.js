@@ -1,6 +1,6 @@
 import varint from 'varint'
 
-export default input => {
+export default (input, prefix) => {
 
   const encodedArray = []
   
@@ -11,10 +11,14 @@ export default input => {
     return total
   }, 0)
   
-  const typedArray = new Uint8Array(length)
+  const typedArray = new Uint8Array(prefix ? prefix.length + length : length)
 
   let currentIndex = 0
   let index = 0
+  if (prefix) {
+    typedArray.set(prefix)
+    currentIndex += prefix.length
+  }
   for (const source of input) {    
     typedArray.set(encodedArray[index], currentIndex)
     currentIndex += encodedArray[index].length
