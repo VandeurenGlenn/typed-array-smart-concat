@@ -1,6 +1,6 @@
 {
   "name": "@vandeurenglenn/typed-array-smart-concat",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "TypedArray.set() the smartConcat() way",
   "type": "module",
   "exports": {
@@ -10,7 +10,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["typed", "array", "concat", "varint"],
+  "keywords": [
+    "typed",
+    "array",
+    "concat",
+    "varint"
+  ],
   "author": "",
   "license": "MIT",
   "repository": {
