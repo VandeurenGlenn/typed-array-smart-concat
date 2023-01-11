@@ -4,10 +4,11 @@
   "description": "TypedArray.set() the smartConcat() way",
   "type": "module",
   "exports": {
-    ".": "./smart-concat.js"
+    ".": "./index.js"
   },
-  "types": "./smart-concat.d.ts",
+  "types": "./index.d.ts",
   "scripts": {
+    "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -30,6 +31,9 @@
     "varint": "github:vandeurenglenn/varint"
   },
   "devDependencies": {
-    "@types/varint": "^6.0.1"
+    "@rollup/plugin-typescript": "^11.0.0",
+    "@types/varint": "^6.0.1",
+    "rollup": "^3.9.1",
+    "tslib": "^2.4.1"
   }
 }
