@@ -1,10 +1,10 @@
 import varint from 'varint'
 
-export default (input, prefix) => {
+export default (input: any[], prefix: string | any[] | ArrayLike<number>) => {
 
   const encodedArray = []
   
-  const length = input.reduce((total, current) => {
+  const length = input.reduce((total: number, current: string | any[]): number => {
     const encoded = varint.encode(current.length)
     encodedArray.push(encoded)
     total += current.length + encoded.length
@@ -16,7 +16,7 @@ export default (input, prefix) => {
   let currentIndex = 0
   let index = 0
   if (prefix) {
-    typedArray.set(prefix)
+    typedArray.set(prefix as ArrayLike<number>)
     currentIndex += prefix.length
   }
   for (const source of input) {    
