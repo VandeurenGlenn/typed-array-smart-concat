@@ -1,6 +1,6 @@
 import varint from 'varint'
 
-export default (input: any[], prefix: string | any[] | ArrayLike<number>) => {
+export default (input: any[], prefix?: string | any[] | ArrayLike<number>) => {
 
   const encodedArray = []
   
