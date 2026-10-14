@@ -1,14 +1,14 @@
 import typescript from "@rollup/plugin-typescript"
-import tsConfig from './tsconfig.json' assert { type: 'json'}
 
 
 export default [{
   input: ['./src/index.ts'],
+  external: ['@leofcoin/codecs/binary'],
   output: {
     format: 'es',
     dir: './'
   },
   plugins: [
-    typescript(tsConfig)
+    typescript({ tsconfig: './tsconfig.json' })
   ]
 }]

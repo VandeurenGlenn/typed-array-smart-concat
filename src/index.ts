@@ -1,31 +1,12 @@
-import varint from 'varint'
+import { encodeFrames } from '@leofcoin/codecs/binary'
 
-export default (input: any[], prefix?: string | any[] | ArrayLike<number>) => {
-
-  const encodedArray = []
-  
-  const length = input.reduce((total: number, current: string | any[]): number => {
-    const encoded = varint.encode(current.length)
-    encodedArray.push(encoded)
-    total += current.length + encoded.length
-    return total
-  }, 0)
-  
-  const typedArray = new Uint8Array(prefix ? prefix.length + length : length)
-
-  let currentIndex = 0
-  let index = 0
-  if (prefix) {
-    typedArray.set(prefix as ArrayLike<number>)
-    currentIndex += prefix.length
-  }
-  for (const source of input) {    
-    typedArray.set(encodedArray[index], currentIndex)
-    currentIndex += encodedArray[index].length
-    typedArray.set(source, currentIndex)
-    currentIndex += source.length
-    index += 1
-  }
-
-  return typedArray
+const asBytes = (source: any): Uint8Array => {
+  if (source instanceof Uint8Array) return source
+  // Keep legacy ArrayLike coercion. Typed-array callers take the zero-copy path.
+  const bytes = new Uint8Array(source.length)
+  bytes.set(source as ArrayLike<number>)
+  return bytes
 }
+
+export default (input: any[], prefix?: string | any[] | ArrayLike<number>) =>
+  encodeFrames(input.map(asBytes), prefix ? asBytes(prefix) : undefined)
