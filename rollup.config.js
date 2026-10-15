@@ -3,7 +3,7 @@ import typescript from "@rollup/plugin-typescript"
 
 export default [{
   input: ['./src/index.ts'],
-  external: ['@leofcoin/codecs/binary'],
+  external: ['@leofcoin/binary'],
   output: {
     format: 'es',
     dir: './'

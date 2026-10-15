@@ -1,4 +1,4 @@
-import { encodeFrames } from '@leofcoin/codecs/binary'
+import { encodeFrames } from '@leofcoin/binary'
 
 const asBytes = (source: any): Uint8Array => {
   if (source instanceof Uint8Array) return source
