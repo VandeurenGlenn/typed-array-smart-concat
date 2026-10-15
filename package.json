@@ -1,6 +1,6 @@
 {
   "name": "@vandeurenglenn/typed-array-smart-concat",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "TypedArray.set() the smartConcat() way",
   "type": "module",
   "exports": {
@@ -9,7 +9,7 @@
   "types": "./index.d.ts",
   "scripts": {
     "build": "rollup -c",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --test encoding.test.js"
   },
   "keywords": [
     "typed",
@@ -28,12 +28,12 @@
   },
   "homepage": "https://github.com/VandeurenGlenn/typed-array-smart-concat#readme",
   "dependencies": {
-    "varint": "github:vandeurenglenn/varint"
+    "@leofcoin/binary": "^1.0.1"
   },
   "devDependencies": {
     "@rollup/plugin-typescript": "^11.0.0",
-    "@types/varint": "^6.0.1",
     "rollup": "^3.9.1",
-    "tslib": "^2.4.1"
+    "tslib": "^2.4.1",
+    "typescript": "^6.0.3"
   }
 }
